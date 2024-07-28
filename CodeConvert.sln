@@ -17,7 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeConvert.Tests", "CodeCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeConvert.Demo", "CodeConvert.Demo\CodeConvert.Demo.csproj", "{567DFAFE-2C7E-4A60-AF5D-5D48E8C87D50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeConvert", "CodeConvert\CodeConvert.csproj", "{567B1DC0-8671-4369-A977-6A92F9E6C587}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeConvert", "CodeConvert\CodeConvert.csproj", "{567B1DC0-8671-4369-A977-6A92F9E6C587}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2729973B-89AD-41CD-970F-FEF08386B63F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
