@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>CSConvert</Title>
+    <Authors>https://github.com/YotQues</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSConvert.Abstractions\CSConvert.Abstractions.csproj" />
+    <ProjectReference Include="..\CSConvert.Exceptions\CSConvert.Exceptions.csproj" />
+    <ProjectReference Include="..\CSConvert.SharedServices\CSConvert.SharedServices.csproj" />
+    <ProjectReference Include="..\CSConvert.TypeScript\CSConvert.TypeScript.csproj" />
+  </ItemGroup>
+
+</Project>
