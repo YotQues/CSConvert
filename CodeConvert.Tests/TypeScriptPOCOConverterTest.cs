@@ -7,10 +7,10 @@ namespace CodeConvert.Tests;
 
 
 
-public class TypeScriptConverterTest
+public class TypeScriptPOCOConverterTest
 {
-    Type[] types = Assembly.GetAssembly(typeof(TypeScriptConverterTest)).GetTypes().Where(t => t.GetCustomAttribute<DataContractAttribute>() != null).ToArray();
-    ICodeConverter converter = new TypeScriptConverter();
+    Type[] types = Assembly.GetAssembly(typeof(TypeScriptPOCOConverterTest)).GetTypes().Where(t => t.GetCustomAttribute<DataContractAttribute>() != null).ToArray();
+    ICodeConverter converter = new TypeScriptPOCOConverter();
 
 
     [Theory]

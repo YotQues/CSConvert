@@ -23,7 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeConvert.TS\CodeConvert.TypeScript.csproj" />
+    <ProjectReference Include="..\CodeConvert.Abstractions\CodeConvert.Abstractions.csproj" />
+    <ProjectReference Include="..\CodeConvert.TypeScript\CodeConvert.TypeScript.csproj" />
   </ItemGroup>
 
 </Project>

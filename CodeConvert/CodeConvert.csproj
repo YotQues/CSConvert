@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PublishAot>true</PublishAot>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>CSConvert</Title>
+    <Authors>https://github.com/YotQues</Authors>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeConvert.Exceptions\CodeConvert.Exceptions.csproj" />
     <ProjectReference Include="..\CodeConvert.Abstractions\CodeConvert.Abstractions.csproj" />
+    <ProjectReference Include="..\CodeConvert.Exceptions\CodeConvert.Exceptions.csproj" />
     <ProjectReference Include="..\CodeConvert.SharedServices\CodeConvert.SharedServices.csproj" />
-    <ProjectReference Include="..\CodeConvert.TS\CodeConvert.TypeScript.csproj" />
+    <ProjectReference Include="..\CodeConvert.TypeScript\CodeConvert.TypeScript.csproj" />
   </ItemGroup>
 
 </Project>

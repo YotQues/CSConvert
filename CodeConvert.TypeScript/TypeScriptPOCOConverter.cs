@@ -1,11 +1,12 @@
 ﻿using CodeConvert.Abstractions;
 using System.Collections;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.Serialization;
 
 namespace CodeConvert.TypeScript;
 
-public class TypeScriptConverter : ICodeConverter
+public class TypeScriptPOCOConverter : ICodeConverter
 {
     private const string FILE_TYPE = "ts";
     public string FileType { get => FILE_TYPE; }
@@ -130,4 +131,13 @@ public class TypeScriptConverter : ICodeConverter
             return null;
         }
     }
+
+    public string Convert(Type type, out string fileName)
+    {
+        var result = Convert(type);
+        fileName = $"{type.Name.Split('`')[0]}.{FileType}";
+        return result;
+    }
+
+    public Func<Type, bool> GetTypesFilter() => t => t.GetCustomAttribute<DataContractAttribute>() != null;
 }

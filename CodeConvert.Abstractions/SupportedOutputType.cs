@@ -2,5 +2,5 @@
 
 public enum SupportedOutputType
 {
-    TypeScript,
+    TypeScriptPOCOs,
 }

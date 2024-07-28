@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CodeConvert.CLI": {
+      "commandLineArgs": "-AssemblyPath=C:\\Users\\yotam\\Documents\\repositories\\yotamaran\\CodeConvert\\CodeConvert.Demo\\bin\\Debug -OutputPath=.\\C:\\Users\\yotam\\Documents\\repositories\\yotamaran\\CodeConvert\\CodeConvert.Demo\\Client\\TypeScript -OutputType=TypeScript",
+      "commandName": "Project"
+    }
+  }
+}
