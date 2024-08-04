@@ -9,33 +9,33 @@ on:
       - main
 
 jobs:
-  analyze:
-    runs-on: ubuntu-latest
-    outputs:
-      projects_to_build: ${{ steps.changed_projects.outputs.projects_to_build }}
-      projects_to_deploy: ${{ steps.changed_projects.outputs.projects_to_deploy }}
-    steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-    - name: Get list of changed projects
-      id: changed_projects
-      run: |
-        projects_to_build::$(./scripts/get-changed-projects.sh)
-        projects_to_deploy::$(./scripts/get-deployable-projects.sh)
+  # analyze:
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     projects_to_build: ${{ steps.changed_projects.outputs.projects_to_build }}
+  #     projects_to_deploy: ${{ steps.changed_projects.outputs.projects_to_deploy }}
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - name: Setup .NET
+  #     uses: actions/setup-dotnet@v4
+  #     with:
+  #       dotnet-version: '8.0.x'
+  #   - name: Get list of changed projects
+  #     id: changed_projects
+  #     run: |
+  #       projects_to_build::$(./scripts/get-changed-projects.sh)
+  #       projects_to_deploy::$(./scripts/get-deployable-projects.sh)
   
-        # Ensure the output is a valid JSON array
-        echo "projects_to_build=$projects_to_build" >> $GITHUB_OUTPUT
-        echo "projects_to_deploy=$projects_to_deploy" >> $GITHUB_OUTPUT
+  #       # Ensure the output is a valid JSON array
+  #       echo "projects_to_build=$projects_to_build" >> $GITHUB_OUTPUT
+  #       echo "projects_to_deploy=$projects_to_deploy" >> $GITHUB_OUTPUT
 
   build-and-test:
-    needs: analyze
+    # needs: analyze
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        project: ${{ fromJson(needs.analyze.outputs.projects_to_build) }}
+    # strategy:
+    #   matrix:
+    #     project: ${{ fromJson(needs.analyze.outputs.projects_to_build) }}
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -43,9 +43,13 @@ jobs:
       with:
         dotnet-version: '8.0.x'
     - name: Build
-      run: dotnet build ${{ matrix.project }} --configuration Release
+      run: dotnet build --configuration Release
     - name: Test
-      run: dotnet test ${{ matrix.project }} --configuration Release
+      run: dotnet test --configuration Release
+    # - name: Build
+    #   run: dotnet build ${{ matrix.project }} --configuration Release
+    # - name: Test
+    #   run: dotnet test ${{ matrix.project }} --configuration Release
 
   # deploy:
   #   needs: build-and-test
