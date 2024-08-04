@@ -11,7 +11,7 @@
 	</ItemGroup>
 
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'">
 		<Exec Command="dotnet run --project=..\CSConvert.CLI\CSConvert.CLI.csproj -AssemblyPath=$(ProjectDir)\\bin\\Debug\\net8.0\\CSConvert.Demo.dll -OutputPath=$(ProjectDir)\\Client\\TypeScript -OutputType=TypeScriptPOCOs" />
 	</Target>
 </Project>
