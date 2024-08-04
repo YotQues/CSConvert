@@ -19,6 +19,7 @@ public sealed class TypeScriptPOCOConverterTest : CodeConverterTestBase
     [InlineData(typeof(DemoRecord), ExpectedTypeScriptOutput.DemoRecord)]
     [InlineData(typeof(DemoStruct), ExpectedTypeScriptOutput.DemoStruct)]
     [InlineData(typeof(DemoEnum), ExpectedTypeScriptOutput.DemoEnum)]
+    [InlineData(typeof(DemoNestedTypeClass), ExpectedTypeScriptOutput.DemoNestedTypeClass)]
     public void HandlesObjectTypes(Type type, string expected)
     {
         TestConverter(type, expected);
@@ -68,6 +69,6 @@ public static class ExpectedTypeScriptOutput
     public const string DemoHashSetClass = "export interface DemoHashSetClass {\n\tDemoHashSet: Array<number>;\n}";
     public const string DemoGenericClass = "\nexport interface DemoGenericClass<TGeneric> {\n}";
     public const string DemoGenericCollectionsClass = "\nexport interface DemoGenericCollections<TGeneric> {\n\tDemoDict: Record<string, TGeneric>;\n\tDemoArray1: Array<TGeneric>;\n\tDemoArray2: Array<TGeneric>;\n\tDemoArray3: Array<TGeneric>;\n\tDemoArray4: Array<TGeneric>;\n}";
-    public const string DemoNestedTypeClass = "import type { DemoEnum } from './DemoEnum.ts';\nimport type { DemoGenericClass } from './DemoGenericClass.ts'\n\nexport interface DemoNestedTypeClass {\n\tDemoEnum: DemoEnum;\n\tDemoDict: Record<string, DemoGenericClass<number>>;\n}";
+    public const string DemoNestedTypeClass = "import type { DemoEnum } from \"./DemoEnum.ts\";\nimport type { DemoGenericClass } from \"./DemoGenericClass.ts\";\n\nexport interface DemoNestedTypeClass {\n\tDemoEnum: DemoEnum;\n\tDemoDict: Record<string, DemoGenericClass<number>>;\n}";
 }
 
