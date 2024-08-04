@@ -23,8 +23,12 @@ jobs:
     - name: Get list of changed projects
       id: changed_projects
       run: |
-        echo "::set-output name=projects_to_build::$(./scripts/get-changed-projects.sh)"
-        echo "::set-output name=projects_to_deploy::$(./scripts/get-deployable-projects.sh)"
+        projects_to_build::$(./scripts/get-changed-projects.sh)
+        projects_to_deploy::$(./scripts/get-deployable-projects.sh)
+  
+        # Ensure the output is a valid JSON array
+        echo "projects_to_build=$projects_to_build" >> $GITHUB_OUTPUT
+        echo "projects_to_deploy=$projects_to_deploy" >> $GITHUB_OUTPUT
 
   build-and-test:
     needs: analyze
