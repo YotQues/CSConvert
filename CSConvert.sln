@@ -24,6 +24,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{DBCE30CA-04DB-4FBC-91AB-89AF7D4ABAE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{88ADE77E-E95E-40D6-A0E3-0A2CBC44DDD5}"
+	ProjectSection(SolutionItems) = preProject
+		ci_cd.yml = ci_cd.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E63A46EA-70E5-4D58-BB4A-786CCFFA3F29}"
+	ProjectSection(SolutionItems) = preProject
+		get-changed-projects.sh = get-changed-projects.sh
+		get-deployable-projects.sh = get-deployable-projects.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +78,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBCE30CA-04DB-4FBC-91AB-89AF7D4ABAE9} = {2729973B-89AD-41CD-970F-FEF08386B63F}
+		{88ADE77E-E95E-40D6-A0E3-0A2CBC44DDD5} = {DBCE30CA-04DB-4FBC-91AB-89AF7D4ABAE9}
+		{E63A46EA-70E5-4D58-BB4A-786CCFFA3F29} = {88ADE77E-E95E-40D6-A0E3-0A2CBC44DDD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A880BBCD-4FEB-4FAB-9399-D3B0C44CB3BF}
